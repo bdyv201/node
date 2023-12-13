@@ -8,7 +8,7 @@ const jsonParser = express.json();
 //комментарий из ветки моделей
 //=======
 //Контроллеры для админ панели 
->>>>>>> 3dfaa9dc9bee935b5b462c9ded3a7ce415b0dcb9
+//>>>>>>> 3dfaa9dc9bee935b5b462c9ded3a7ce415b0dcb9
 router.get('/', adminController.getArticleAll);
 router.get('/:idArticle', adminController.getArticle)
 router.post('/addArticle', adminController.addArticle);
