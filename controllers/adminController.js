@@ -1,29 +1,31 @@
 const Models = require("../models/adminModel.js");
 
 exports.getArticleAll = async function(req, res){
-   let m=await Models.getAll();
-   res.render('adminArticles', {data:m});
+    let m=await Models.getAll();
+    res.render('adminArticles', {data:m});
+    
 };
 
 exports.getArticle = async function(req, res){
-   let m=await Models.getOne(req.params.idArticle);
-   res.render('adminArticlesShow', {data:m});
+    let m=await Models.getOne(req.params.idArticle);
+    res.render('adminArticleShow', {data:m});
+    
 };
-//1 ошибка
+
 exports.addArticle = async function(req, res){
-   await Models.addOne(req.body);
-   let m=await Models.getAll();
-   res.render('adminArticles', {data:m});
+    await Models.addOne(req.body);
+    let m=await Models.getAll();
+    res.render('adminArticles', {data:m});
 };
-//2 ошибка
-exports.editArtiсle = async function(req, res){
-   await Models.editOne(req.body);
-   let m=await Models.getOne(req.body.idArtcile);
-   res.render('adminArticlesShow', {data:m});
+exports.editArticle = async function(req, res){
+    await Models.editOne(req.body);
+    let m=await Models.getOne(req.body.idArticle);
+    res.render('adminArticleShow', {data:m});
+    
 };
-//3 ошибка
-exports.deleteArtiсle = async function(req, res){
-  await Models.deleteOne();
-  let m=await Models.getAll();
-  res.render('adminArticles', {data:m});
+exports.deleteArticle = async function(req, res){
+    await Models.deleteOne();
+    let m=await Models.getAll();
+    res.render('adminArticles', {data:m});
+    
 };
