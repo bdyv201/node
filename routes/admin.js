@@ -5,11 +5,11 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const jsonParser = express.json();
 
-//Контроллеры для админ панели
-router.get('/',adminController.getArticleAll);
-router.get('/:idArticle',adminController.getArticle)
-router.post('/addArticle',adminController.addArticle);
-router.post('/editArticle',adminController.editArticle);
-router.post('/deleteArticle',adminController.deleteArticle);
+
+router.get('/', adminController.getArticleAll);
+router.get('/:idArticle', adminController.getArticle)
+router.post('/addArticle', urlencodedParser, adminController.addArticle);
+router.post('/editArticle', urlencodedParser, adminController.editArticle);
+router.post('/deleteArticle', adminController.deleteArticle);
 
 module.exports = router;

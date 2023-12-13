@@ -14,3 +14,5 @@ exports.getArticle = async function(req, res){
     res.render('articleShow', {data:m});
     
 };
+
+
