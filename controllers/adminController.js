@@ -9,20 +9,20 @@ exports.getArticle = async function(req, res){
    let m=await Models.getOne(req.params.idArticle);
    res.render('adminArticlesShow', {data:m});
 };
-
-exports.addArtcile = async function(req, res){
+//1 ошибка
+exports.addArticle = async function(req, res){
    await Models.addOne(req.body);
    let m=await Models.getAll();
    res.render('adminArticles', {data:m});
 };
-
-exports.editArtcile = async function(req, res){
+//2 ошибка
+exports.editArtiсle = async function(req, res){
    await Models.editOne(req.body);
    let m=await Models.getOne(req.body.idArtcile);
    res.render('adminArticlesShow', {data:m});
 };
-
-exports.deleteArtcile = async function(req, res){
+//3 ошибка
+exports.deleteArtiсle = async function(req, res){
   await Models.deleteOne();
   let m=await Models.getAll();
   res.render('adminArticles', {data:m});
