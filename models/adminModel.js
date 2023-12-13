@@ -1,4 +1,4 @@
-const connection=require("./mysql.js");
+const connection=require("../mysql.js");
 
 exports.getAll=async function(req,res){
     let arr=[];
@@ -30,11 +30,11 @@ exports.getOne=async function(req,res){
     return arr;
 }
 exports.addOne=async function(req,res){
-    let sql="insert into article values('','','')";
+
+    let sql="insert into article values('',?,?,?)";
     filter=[req.titleArticle,req.textArticle,req.descriptionArticle];
     await connection.query(sql,filter)
     .then(data=>{
-    console.log('ok');
     })
     .catch(err=>{
     console.log(err);

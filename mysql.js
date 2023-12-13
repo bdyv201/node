@@ -13,4 +13,4 @@ connection = mysql.createConnection({
   console.log("Подключение к серверу MySQL успешно установлено");
   }
   });
-  module.exports=connection;
+  module.exports=connection;//
